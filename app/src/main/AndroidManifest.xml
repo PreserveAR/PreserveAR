@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PreserveAR">
         <activity
+            android:name=".RecycleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PreserveActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ExploreActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainScreen"
+            android:exported="false" />
+        <activity
+            android:name=".experienceActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

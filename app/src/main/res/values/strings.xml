@@ -4,4 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="appName1">Preserve</string>
     <string name="appName2">AR</string>
+    <string name="explore">Explore AR</string>
+    <string name="preserve">Preserve AR</string>
+    <string name="recycle">Recycle AR</string>
 </resources>
