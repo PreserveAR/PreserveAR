@@ -15,6 +15,7 @@
         android:layout_marginEnd="24dp"
         android:onClick="startExploreActivity"
         android:text="@string/explore"
+        app:layout_constraintBottom_toTopOf="@+id/btnPreserve"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -28,6 +29,7 @@
         android:layout_marginEnd="24dp"
         android:onClick="startPreserveActivity"
         android:text="@string/preserve"
+        app:layout_constraintBottom_toTopOf="@+id/btnRecycle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnExplore" />
