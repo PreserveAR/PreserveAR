@@ -9,4 +9,7 @@
     <string name="preserveDescription">Welcome to Preserve AR!\n\n Here you can take a photo of Arkansas to upload to our interactive map. You\'ll be able to add a title and a description of your photo for others to view.\n\n\n Click the button below to get started or hit the back button to return to the main menu!</string>
     <string name="photo">Take a pic!</string>
     <string name="photoSubmit">Upload!</string>
+    <string name="audio">Play audio</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

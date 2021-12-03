@@ -22,10 +22,14 @@ public class PreserveActivity extends AppCompatActivity {
     // call up camera and then swap over to Preserve Description Activity
     public void startPreserveDescriptionActivity(View v) {
         Log.d("PreserveActivity", "Going to take photo!");
-        Intent switchActivityIntent = new Intent(this, PreserveDescriptionActivity.class);
-        startActivity(switchActivityIntent);
+//        Intent switchActivityIntent = new Intent(this, PreserveDescriptionActivity.class);
+//        Intent switchActivityIntent = new Intent(this, TakePhotoActivity.class);
+        Intent photoIntent = new Intent();
+        photoIntent.setClass(this, TakePhotoActivity.class);
+        startActivity(photoIntent);
+//        startActivity(switchActivityIntent);
         //Remove itself from activity
-        finish();
+
     }
 
 }
