@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import edu.uark.kacounts.preservear.PhotoActivity.TakePhotoActivity;
+
 public class PreserveActivity extends AppCompatActivity {
     Button takePhoto;
 

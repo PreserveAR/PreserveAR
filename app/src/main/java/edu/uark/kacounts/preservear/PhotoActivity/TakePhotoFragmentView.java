@@ -1,4 +1,4 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.PhotoActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -30,6 +30,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import edu.uark.kacounts.preservear.PhotoActivity.TakePhotoContract;
+import edu.uark.kacounts.preservear.R;
+
 
 public class TakePhotoFragmentView extends Fragment implements TakePhotoContract.View {
 
@@ -56,12 +59,6 @@ public class TakePhotoFragmentView extends Fragment implements TakePhotoContract
                         mPresenter.notifyPictureCaptured(currentPhotoPath);
                     }
                 });
-
-//        setContentView(R.layout.activity_preserve_description);
-//        getSupportActionBar().setTitle("User Pics of AR");
-//        btnSavePhoto = (Button) getView().findViewById(R.id.btnSavePhoto);
-//        title = (EditText) getView().findViewById(R.id.etTitle);
-//        description = getView().findViewById(R.id.etMessage);
     }
 
     @Override
@@ -105,6 +102,26 @@ public class TakePhotoFragmentView extends Fragment implements TakePhotoContract
         //sends the user to capture a photo right away
         captureNewPhoto();
         imageView = root.findViewById(R.id.imageView3);
+
+        btnSavePhoto = (Button) root.findViewById(R.id.btnSavePhoto);
+        title = (EditText) root.findViewById(R.id.etTitle);
+        description = root.findViewById(R.id.etMessage);
+
+        // dynamic button that saves picture to database
+        btnSavePhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //place your action here
+                Log.d("PreserveActivity", "User done editing!");
+                // upload to our database!
+
+                // hide button
+                btnSavePhoto.setVisibility(View.INVISIBLE);
+                // make editing stop
+                title.setEnabled(false);
+                description.setEnabled(false);
+            }
+        });
         return root;
     }
 
@@ -151,17 +168,5 @@ public class TakePhotoFragmentView extends Fragment implements TakePhotoContract
         // Save a file: path for use with ACTION_VIEW intents
         currentPhotoPath = image.getAbsolutePath();
         return image;
-    }
-
-    // save photo uploads user's photo to database and then hides itself and prevents editing
-    public void savePhoto(View v) {
-        Log.d("PreserveActivity", "User done editing!");
-        // upload to our database!
-
-        // hide button
-        btnSavePhoto.setVisibility(View.INVISIBLE);
-        // make editing stop
-        title.setEnabled(false);
-        description.setEnabled(false);
     }
 }

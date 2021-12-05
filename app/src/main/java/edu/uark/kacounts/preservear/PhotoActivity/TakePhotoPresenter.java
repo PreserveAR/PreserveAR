@@ -1,9 +1,10 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.PhotoActivity;
 
 import android.util.Log;
 
 import edu.uark.kacounts.preservear.Data.Photo;
 import edu.uark.kacounts.preservear.Data.PhotoDataSource;
+import edu.uark.kacounts.preservear.PhotoActivity.TakePhotoContract;
 
 public class TakePhotoPresenter implements TakePhotoContract.Presenter{
 

@@ -1,4 +1,4 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.PhotoActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import edu.uark.kacounts.preservear.Data.PhotoDataSource;
 import edu.uark.kacounts.preservear.Data.PhotoRepository;
+import edu.uark.kacounts.preservear.R;
 import util.AppExecutors;
 
 public class TakePhotoActivity extends AppCompatActivity {
@@ -30,7 +31,6 @@ public class TakePhotoActivity extends AppCompatActivity {
         mModel = PhotoRepository.getInstance(new AppExecutors(),getApplicationContext());
         mPresenter.setModel(mModel);
         mView = (TakePhotoContract.View) getSupportFragmentManager().findFragmentById(R.id.fragmentContainerView3);
-
         mPresenter.setView(mView);
     }
 

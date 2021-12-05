@@ -1,4 +1,4 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.PhotoActivity;
 
 import edu.uark.kacounts.preservear.Data.Photo;
 import edu.uark.kacounts.preservear.Data.PhotoDataSource;

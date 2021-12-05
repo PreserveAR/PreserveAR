@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TakePhotoActivity">
+    tools:context=".PhotoActivity.TakePhotoActivity">
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragmentContainerView3"
-        android:name="edu.uark.kacounts.preservear.TakePhotoFragmentView"
+        android:name="edu.uark.kacounts.preservear.PhotoActivity.TakePhotoFragmentView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
