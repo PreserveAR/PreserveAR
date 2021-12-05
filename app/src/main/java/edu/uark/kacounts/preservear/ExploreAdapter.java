@@ -29,9 +29,9 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ViewHold
         public ViewHolder(View view) {
             super(view);
             // Define click listener for the ViewHolder's View
-            tvTitle = view.findViewById(R.id.tvTitle);
-            tvDescription = view.findViewById(R.id.tvDescription);
-            image = view.findViewById(R.id.imagePreview);
+            tvTitle = view.findViewById(R.id.tvExperienceTitle);
+            tvDescription = view.findViewById(R.id.tvExperienceDesciption);
+            image = view.findViewById(R.id.ivExperienceImage);
         }
 
         public TextView getTvTitle() {
@@ -77,7 +77,7 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ViewHold
             public void onClick(View view) {
                 Integer experience_id = Integer.valueOf((String) view.getTag());
                 Intent exploreIntent = new Intent();
-                exploreIntent.setClass(view.getContext(), ExperienceActivity.class); // take over to Julio's experience activity
+                exploreIntent.setClass(view.getContext(), experienceActivity.class); // take over to Julio's experience activity
                 exploreIntent.putExtra("experience_id",experience_id);
                 view.getContext().startActivity(exploreIntent);
 
