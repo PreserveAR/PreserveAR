@@ -25,8 +25,16 @@
             android:name=".experienceActivity"
             android:exported="true" />
         <activity
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream
             android:name=".MainActivity"
             android:exported="true">
+=======
+=======
+>>>>>>> Stashed changes
+            android:name=".LoadUpActivity"
+            android:exported="true" >
+>>>>>>> Stashed changes
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
