@@ -1,4 +1,4 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.MapsActivity;
 
 import android.Manifest;
 import android.content.Intent;
@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,10 +27,11 @@ import java.util.LinkedList;
 import java.util.List;
 
 import edu.uark.kacounts.preservear.PhotoActivity.TakePhotoActivity;
+import edu.uark.kacounts.preservear.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link MapsViewFragment#newInstance} factory method to
+ * Use the {@link MapsViewFragment} factory method to
  * create an instance of this fragment.
  */
 public class MapsViewFragment extends Fragment implements MapsContract.View, OnMapReadyCallback, GoogleMap.OnMarkerClickListener {
@@ -123,10 +125,14 @@ public class MapsViewFragment extends Fragment implements MapsContract.View, OnM
     public void addMarker(Double latitude, Double longitude, Integer id) {
         if(mMap!=null){
             LatLng position = new LatLng(latitude,longitude);
-            Marker marker = mMap.addMarker(new MarkerOptions().position(position));
-            assert marker != null;
-            marker.setTag(id.toString());
-            markers.add(marker);
+//            Marker marker = mMap.addMarker(new MarkerOptions().position(position));
+            Marker temp = mMap.addMarker(new MarkerOptions()
+                    .position(new LatLng(latitude, longitude))
+                    .title(Integer.toString(id)));
+            assert temp != null;
+            temp.setTag(id.toString());
+            markers.add(temp);
+            Log.d("fragment", "added marker at " + latitude + " " + longitude + " marker count = " + markers.size());
         }
     }
 
@@ -137,6 +143,7 @@ public class MapsViewFragment extends Fragment implements MapsContract.View, OnM
         photoActivityIntent.putExtra("id",photoId);
         photoActivityIntent.putExtra("Lat",mCurrentLocation.latitude);
         photoActivityIntent.putExtra("Long",mCurrentLocation.longitude);
+        addMarker(mCurrentLocation.latitude, mCurrentLocation.latitude, photoId);
         startActivity(photoActivityIntent);
     }
 

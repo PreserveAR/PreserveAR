@@ -1,4 +1,4 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.MapsActivity;
 
 import com.google.android.gms.maps.model.LatLng;
 

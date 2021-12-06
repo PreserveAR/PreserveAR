@@ -1,4 +1,4 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.MapsActivity;
 
 import android.util.Log;
 
@@ -6,6 +6,7 @@ import java.util.List;
 
 import edu.uark.kacounts.preservear.Data.Photo;
 import edu.uark.kacounts.preservear.Data.PhotoDataSource;
+import edu.uark.kacounts.preservear.MapsActivity.MapsContract;
 
 public class MapsPresenter implements MapsContract.Presenter{
 

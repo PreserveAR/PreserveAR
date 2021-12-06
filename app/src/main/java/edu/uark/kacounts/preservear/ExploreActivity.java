@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import edu.uark.kacounts.preservear.PhotoActivity.TakePhotoActivity;
+import edu.uark.kacounts.preservear.MapsActivity.MapsActivity;
 
 public class ExploreActivity extends AppCompatActivity {
 

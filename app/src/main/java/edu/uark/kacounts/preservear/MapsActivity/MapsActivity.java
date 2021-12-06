@@ -1,4 +1,4 @@
-package edu.uark.kacounts.preservear;
+package edu.uark.kacounts.preservear.MapsActivity;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
@@ -18,17 +18,12 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdateFactory;
-import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import edu.uark.kacounts.preservear.Data.PhotoDataSource;
 import edu.uark.kacounts.preservear.Data.PhotoRepository;
-import edu.uark.kacounts.preservear.databinding.ActivityMapsBinding;
+import edu.uark.kacounts.preservear.R;
 import util.AppExecutors;
 
 public class MapsActivity extends FragmentActivity{
