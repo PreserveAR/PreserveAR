@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import edu.uark.kacounts.preservear.Data.Photo;
+
 public class PreserveDescriptionActivity extends AppCompatActivity {
     Button btnSavePhoto;
     EditText title;
@@ -24,15 +26,20 @@ public class PreserveDescriptionActivity extends AppCompatActivity {
         description = findViewById(R.id.etMessage);
     }
 
-    // save photo uploads user's photo to database and then hides itself and prevents editing
+//     save photo uploads user's photo to database and then hides itself and prevents editing
     public void savePhoto(View v) {
         Log.d("PreserveActivity", "User done editing!");
-        // upload to our database!
+        //upload to our database!
+        Photo photo = new Photo();
+        photo.setTitle(String.valueOf(title.getText()));
+        photo.setComment(String.valueOf(description.getText()));
 
-        // hide button
+         //hide button
         btnSavePhoto.setVisibility(View.INVISIBLE);
         // make editing stop
         title.setEnabled(false);
         description.setEnabled(false);
+
+        this.finish();
     }
 }

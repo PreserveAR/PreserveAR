@@ -12,6 +12,7 @@ public interface TakePhotoContract {
         void setModel(PhotoDataSource model);
         void notifyPictureCaptured(String photoPath);
         Photo getPhoto(int id);
+        void savePhoto(String title, String comment, String photoPath);
     }
 
     interface View{

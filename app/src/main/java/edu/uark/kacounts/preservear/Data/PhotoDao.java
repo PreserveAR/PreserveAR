@@ -36,4 +36,9 @@ public interface PhotoDao {
      */
     @Update
     int update(Photo photo);
+
+    @Query("SELECT *FROM Photo WHERE id = :id")
+    Cursor findPhoto(long id);
+
+
 }

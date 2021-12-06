@@ -61,7 +61,7 @@ public class experienceActivity extends AppCompatActivity {
             btnAudio.setImageResource(android.R.drawable.ic_media_pause);
             tvAudioDesc.setText(audioPlaying);
             // start the audio
-            playAudio();
+//            playAudio();
         }
         // audio is playing, pause it
         else {
@@ -69,7 +69,7 @@ public class experienceActivity extends AppCompatActivity {
             audioOn = false;
             tvAudioDesc.setText(audioPause);
             btnAudio.setImageResource(android.R.drawable.ic_media_play);
-            mp.pause();
+//            mp.pause();
         }
     }
 
@@ -102,10 +102,10 @@ public class experienceActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        mp.release();
-        mp = null;
-        super.onDestroy();
-    }
+//    @Override
+//    protected void onDestroy() {
+//        mp.release();
+//        mp = null;
+//        super.onDestroy();
+//    }
 }

@@ -4,7 +4,6 @@ import android.util.Log;
 
 import edu.uark.kacounts.preservear.Data.Photo;
 import edu.uark.kacounts.preservear.Data.PhotoDataSource;
-import edu.uark.kacounts.preservear.PhotoActivity.TakePhotoContract;
 
 public class TakePhotoPresenter implements TakePhotoContract.Presenter{
 
@@ -34,28 +33,10 @@ public class TakePhotoPresenter implements TakePhotoContract.Presenter{
 
     @Override
     public void notifyPictureCaptured(String photoPath) {
-        Photo photo = new Photo();
-
-        photo.setFilename(photoPath);
-//        photo.setLatitude(MapsActivity.Latitude);
-//        photo.setLongitude(MapsActivity.Longitude);
-        photo.setLatitude(0.0);
-        photo.setLongitude(0.0);
-        Log.d("Presenter", "fileName = " + photoPath);
-        photo.setComment("Photo!");
-        mModel.createPhoto(photo, new PhotoDataSource.CreatePhotoCallback() {
-            @Override
-            public void onPhotoCreated(int id) {
-                mView.photoAdded(id);
-            }
-
-            @Override
-            public void onPhotoCreateFail() {
-                return;
-            }
-        });
         mView.setPicture(photoPath);
     }
+
+
 
     @Override
     public Photo getPhoto(int id) {
@@ -72,5 +53,33 @@ public class TakePhotoPresenter implements TakePhotoContract.Presenter{
             }
         });
         return photo;
+    }
+
+    @Override
+    public void savePhoto(String title, String comment, String photoPath) {
+        Photo photo = new Photo();
+
+
+        photo.setTitle(title);
+        photo.setComment(comment);
+        photo.setFilename(photoPath);
+//        photo.setLatitude(MapsActivity.Latitude);
+//        photo.setLongitude(MapsActivity.Longitude);
+        photo.setLatitude(MapsActivity.Latitude);
+        photo.setLongitude(MapsActivity.Longitude);
+
+
+        Log.d("Presenter", "fileName = " + photoPath);
+        mModel.createPhoto(photo, new PhotoDataSource.CreatePhotoCallback() {
+            @Override
+            public void onPhotoCreated(int id) {
+                mView.photoAdded(id);
+            }
+
+            @Override
+            public void onPhotoCreateFail() {
+                return;
+            }
+        });
     }
 }

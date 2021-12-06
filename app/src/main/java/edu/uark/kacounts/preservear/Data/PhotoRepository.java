@@ -1,6 +1,7 @@
 package edu.uark.kacounts.preservear.Data;
 
 import android.annotation.SuppressLint;
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
@@ -94,8 +95,23 @@ public class PhotoRepository implements PhotoDataSource{
 
     @Override
     public void savePhoto(@NonNull Photo photo) {
+            Log.d("REPOSITORY","SavePhoto");
+            Runnable runnable = new Runnable(){
+                @Override
+                public void run() {
+                    ContentValues myCV = new ContentValues();
+                    myCV.put(Photo.ID,photo.getId());
+                    myCV.put(Photo.COMMENT, photo.getComment().toString());
+                    myCV.put(Photo.FNAME, photo.getFilename().toString());
+                    myCV.put(Photo.LAT, photo.getLatitude());
+                    myCV.put(Photo.LONG, photo.getLongitude());
+                    final int numUpdated = mContext.getContentResolver().update(Uri.parse("content://" + PhotoProvider.AUTHORITY + "/" + PhotoProvider.PHOTO_TABLE_NAME), myCV,null,null);
+                    Log.d("REPOSITORY","Update Messages updated " + String.valueOf(numUpdated) + " rows");
+                }
+            };
+            mAppExecutors.diskIO().execute(runnable);
 
-    }
+        }
 
     @Override
     public void createPhoto(@NonNull Photo photo, @NonNull CreatePhotoCallback callback) {

@@ -30,6 +30,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import edu.uark.kacounts.preservear.Data.Photo;
 import edu.uark.kacounts.preservear.PhotoActivity.TakePhotoContract;
 import edu.uark.kacounts.preservear.R;
 
@@ -113,13 +114,14 @@ public class TakePhotoFragmentView extends Fragment implements TakePhotoContract
             public void onClick(View view) {
                 //place your action here
                 Log.d("PreserveActivity", "User done editing!");
-                // upload to our database!
 
+                mPresenter.savePhoto(String.valueOf(title.getText()), String.valueOf(description.getText()), currentPhotoPath);
                 // hide button
                 btnSavePhoto.setVisibility(View.INVISIBLE);
                 // make editing stop
                 title.setEnabled(false);
                 description.setEnabled(false);
+
             }
         });
         return root;
