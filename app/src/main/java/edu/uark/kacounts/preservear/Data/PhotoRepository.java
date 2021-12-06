@@ -115,7 +115,7 @@ public class PhotoRepository implements PhotoDataSource{
 
     @Override
     public void createPhoto(@NonNull Photo photo, @NonNull CreatePhotoCallback callback) {
-        Log.d("REPOSITORY","Deleting...");
+        Log.d("REPOSITORY","Creating...");
         Runnable runnable = new Runnable() {
             @Override
             public void run() {

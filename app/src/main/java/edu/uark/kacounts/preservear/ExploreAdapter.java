@@ -11,13 +11,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import edu.uark.kacounts.preservear.Data.Photo;
+
 public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ViewHolder>{
 
-    public void setLocalDataSet(List<Experience> localDataSet) {
+    public void setLocalDataSet(List<Photo> localDataSet) {
         this.localDataSet = localDataSet;
     }
 
-    private List<Experience> localDataSet;
+    private List<Photo> localDataSet;
 
     // want to pass tag!
     public static class ViewHolder extends RecyclerView.ViewHolder {
@@ -53,7 +55,7 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ViewHold
      * @param dataSet String[] containing the data to populate views to be used
      * by RecyclerView.
      */
-    public ExploreAdapter(List<Experience> dataSet) {
+    public ExploreAdapter(List<Photo> dataSet) {
         localDataSet = dataSet;
     }
 
@@ -71,7 +73,7 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ViewHold
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, final int position) {
 
-        viewHolder.itemView.setTag(String.valueOf(localDataSet.get(position).getExperienceId()));
+        viewHolder.itemView.setTag(String.valueOf(localDataSet.get(position).getId()));
         viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -85,14 +87,15 @@ public class ExploreAdapter extends RecyclerView.Adapter<ExploreAdapter.ViewHold
         });
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
-        String experienceTitle = localDataSet.get(position).getExperienceTitle();
+        String experienceTitle = localDataSet.get(position).getTitle();
         // set the title of the experience
         viewHolder.getTvTitle().setText(experienceTitle);
         // set the description of the experience
-        String experienceDescription = localDataSet.get(position).getExperienceDescription();
-        // parse to be just first sentence
+        String experienceDescription = localDataSet.get(position).getComment();
+        // parse to be just 25 characters
+        String parsedDescription = experienceDescription.substring(0,25) + "...";
         // ADD LATER!
-        viewHolder.getTvDescription().setText(experienceDescription);
+        viewHolder.getTvDescription().setText(parsedDescription);
         // add the image
 //        ImageView experienceImage = localDataSet.get(position).getExperienceImage();
 //        viewHolder.getExperienceImage().setImage;
