@@ -10,6 +10,22 @@
     <string name="photo">Take a pic!</string>
     <string name="photoSubmit">Upload!</string>
     <string name="audio">Play audio</string>
+    <string name="title1">BATTLEFIELD PARK</string>
+    <string name="desc1">The original 10 acres of Battlefield Park were purchased in 1908 by the Prairie Grove chapter of the United Daughters of the Confederacy and maintained by the U. D. C. for nearly 50 years as a memorial park. From 1886 to 1926 an annual reunion of Confederate veterans was held on this site. The State of Arkansas in 1957 created a Prairie Grove Battlefield Commission which added 55 acres to the Park area and developed the Park as a battle memorial. Members of the first Commission, appointed by Governor Orval E. Faubus, were Fred McCuistion, Mrs. J.C. Parks, Mrs. Lee Seamster, Glenn Will and W. J.  Lemke.</string>
+    <string name="desc1S">The original 10 acres of...</string>
+    <string name="fName1">battlefieldmarker01.png</string>
+    <string name="title2">BATTLE OF PRAIRIE GROVE December 7, 1862</string>
+    <string name="desc2">The battle on this field was fought between the Confederate army of General T. C. Hindman (Arkansas) and Federal forces commanded by Generals James C. Blunt (Kansas) and F. J. Herron (Iowa). Battlefield Park occupies the approximate center of the Confederate postition. From 10 A.M. to 2 P.M. the contest was between Herron, attacking from the north, and the Confederate defenders of this ridge. From 2 o\'clock until dark, the battle was chiefly against Blunt\'s army. attacking from the northwest. Hindman reported that he had 11,000 troops engaged. Blunt\'s report gives his force 8,000 and Herron\'s as 5,000. The Confederate loss in killed, wounded and missing was 1,317. The Federal loss was 1,148. During the night of December 7-8 the Confederate army withdrew to Van Buren.</string>
+    <string name="desc2S">The battle on this field was...</string>
+    <string name="fName2">battlefieldmarker02.png</string>
+    <string name="title3">MARCH OF THE ARMIES December 3-7, 1862</string>
+    <string name="desc3">General Hindman on the Arkansas River planned to drive General Blunt\'s Federal army out, of northwest Arkansas. The Confederate army left Van Buren on December 3. Enroute north, Hindman learned that Blunt had called for help from General Herron at Wilson\'s Creek, Mo., and that the latter was already on the march. Hindman decided to bypass Blunt at Cane Hill and march to intercept Herron. Herron\'s army made a forced march of 100 miles in 3 days and ran into the Confederate advance early on the morning of Sunday, December 7. The Confederates established themselves on this ridge, facing northeast. Herron crossed the Illinois River and attacked. Meanwhile Blunt at Cane Hill learned that the Confederate army had bypassed him, so he marched his army to Rhea\'s Mill then approached the battle from the northwest, arriving on the field at 2 P. M Darkness finally halted the bitterly-fought battle. During the night, Hindman\'s army, low on supplies, withdrew south to Van Buren.</string>
+    <string name="desc3S">General Hindman on the Ar...</string>
+    <string name="fName3">battlefieldparkmarker03.png</string>
+    <string name="title4">Fayetteville Farmer\'s Market Christmas Event</string>
+    <string name="desc4">There are Christmas Event on the square!</string>
+    <string name="desc4S">There are Christmas Event...</string>
+    <string name="fName4">farmersmarketchristmasevent.png</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_maps">MapsActivity</string>

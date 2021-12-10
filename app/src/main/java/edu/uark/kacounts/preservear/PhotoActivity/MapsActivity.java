@@ -187,9 +187,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap = googleMap;
 
         //Add a marker in Sydney and move the camera
-//        LatLng sydney = new LatLng(36.1869633, -94.1212133);
-//        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        mMap.setOnMarkerClickListener(this);
+        LatLng BATTLEFIELDPARK = new LatLng(35.98326, -94.30998);
+        mMap.addMarker(new MarkerOptions().position(BATTLEFIELDPARK).title("Battlefield park"));
+
+        LatLng battle2 = new LatLng(35.98336, -94.31032);
+        mMap.addMarker(new MarkerOptions().position(battle2).title("Battle of prairie grove"));
+
+        LatLng battle3 = new LatLng(35.98353, -94.31040);
+        mMap.addMarker(new MarkerOptions().position(battle3).title("March of the armies"));
     }
 
     public void takePic(View v) {
@@ -218,6 +224,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         Intent markerIntent = new Intent();
         markerIntent.setClass(this, experienceActivity.class);
         markerIntent.putExtra("id", count);
+        markerIntent.putExtra("name", marker.getTitle());
         startActivity(markerIntent);
 
         // Return false to indicate that we have not consumed the event and that we wish

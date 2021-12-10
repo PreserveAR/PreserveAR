@@ -57,6 +57,7 @@ public class PhotoRepository implements PhotoDataSource{
             public void run() {
                 String[] projection = {
                         Photo.ID,
+                        Photo.TITLE,
                         Photo.COMMENT,
                         Photo.FNAME,
                         Photo.LAT,
@@ -76,6 +77,7 @@ public class PhotoRepository implements PhotoDataSource{
                             while (c.moveToNext()) {
                                 if (c.getInt(c.getColumnIndex(Photo.ID)) == PhotoId) {
                                     photo.setId(c.getInt(c.getColumnIndex(Photo.ID)));
+                                    photo.setTitle(c.getString(c.getColumnIndex(Photo.TITLE)));
                                     photo.setComment(c.getString(c.getColumnIndex(Photo.COMMENT)));
                                     photo.setFilename(c.getString(c.getColumnIndex(Photo.FNAME)));
                                     photo.setLatitude(c.getDouble(c.getColumnIndex(Photo.LAT)));
@@ -101,6 +103,7 @@ public class PhotoRepository implements PhotoDataSource{
                 public void run() {
                     ContentValues myCV = new ContentValues();
                     myCV.put(Photo.ID,photo.getId());
+                    myCV.put(Photo.TITLE, photo.getTitle());
                     myCV.put(Photo.COMMENT, photo.getComment().toString());
                     myCV.put(Photo.FNAME, photo.getFilename().toString());
                     myCV.put(Photo.LAT, photo.getLatitude());

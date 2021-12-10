@@ -34,7 +34,7 @@ public class ExploreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_explore);
         getSupportActionBar().setTitle("Explore AR");
         btnToMap = findViewById(R.id.btnToMap);
-        rvExperiences = findViewById(R.id.rvExperienceList);
+//        rvExperiences = findViewById(R.id.rvExperienceList);
 
         photosList = new ArrayList<>();
 
@@ -42,7 +42,7 @@ public class ExploreActivity extends AppCompatActivity {
         experiences = Injection.providePhotoRepository(new AppExecutors(), getApplicationContext());
 
         // set up default data
-        checkFirstRun();
+//        checkFirstRun();
     }
 
     // take user to map activity
